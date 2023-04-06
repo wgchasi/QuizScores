@@ -1,8 +1,8 @@
 package com.quizscores.service;
 
-import com.quizscores.exceptions.StudentNotFoundException;
-
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -33,7 +33,27 @@ public class StudentService {
         db.put(name, score);
     }
 
+    /**
+     * Removed a student from the system's DB
+     * @param name Student's name
+     */
     public void removeStudent(String name) {
         db.remove(name);
+    }
+
+    /**
+     * Returns the current map (DB)
+     * @return HashMap containing students and scores
+     */
+    public Map<String, Integer> getStudentMap() {
+        return db;
+    }
+
+    public List<String> getStudentList() {
+        return new ArrayList<>(db.keySet());
+    }
+
+    public List<Integer> getStudentScores() {
+        return new ArrayList<>(db.values());
     }
 }
