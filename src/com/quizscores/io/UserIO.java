@@ -1,3 +1,5 @@
+package com.quizscores.io;
+
 public interface UserIO {
     /**
      * Print a given String to the console

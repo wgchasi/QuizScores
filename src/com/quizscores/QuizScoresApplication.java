@@ -1,4 +1,8 @@
-public class Main {
+package com.quizscores;
+
+import com.quizscores.io.UserIOImpl;
+
+public class QuizScoresApplication {
     public static void main(String[] args) {
         UserIOImpl foo = new UserIOImpl();
 

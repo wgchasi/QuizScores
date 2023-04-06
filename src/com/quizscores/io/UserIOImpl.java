@@ -1,6 +1,10 @@
+package com.quizscores.io;
+
+import com.quizscores.io.UserIO;
+
 import java.util.Scanner;
 
-public class UserIOImpl implements UserIO{
+public class UserIOImpl implements UserIO {
 
     Scanner scanner = new Scanner(System.in);
 
