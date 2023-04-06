@@ -11,7 +11,7 @@ import java.util.Map;
  *
  */
 public class StudentService {
-    private Map<String, Integer> db = new HashMap<>();
+    private Map<String, List<Integer>> db = new HashMap<>();
 
 
     /**
@@ -45,7 +45,7 @@ public class StudentService {
      * Returns the current map (DB)
      * @return HashMap containing students and scores
      */
-    public Map<String, Integer> getStudentMap() {
+    public Map<String, List<Integer>> getStudentMap() {
         return db;
     }
 
@@ -54,6 +54,11 @@ public class StudentService {
     }
 
     public List<Integer> getStudentScores() {
-        return new ArrayList<>(db.values());
+        List<Integer> scores = new ArrayList<>();
+
+        for(List<Integer> list: db.values()) {
+            scores.addAll(list);
+        }
+        return scores;
     }
 }
